@@ -1,0 +1,40 @@
+language: node_js
+node_js:
+    - "lts/*"
+
+cache:
+    directories:
+      - "node_modules"
+
+stages:
+    - lint
+    - lint-styles
+    - test
+    - name: deploy
+      if: branch = master
+
+before_install:
+    - npm ci
+
+jobs:
+    include:
+      - stage: lint
+        name: "Lint JS"
+        script:
+          - npm run lint
+      - stage: lint-styles
+        name: "Lint CSS"
+        script:
+          - npm run lint-styles
+      - stage: test
+        name: "Unit tests"
+        script:
+          - npm run test
+      - stage: deploy
+        name: "Production build & deploy"
+        script:
+          - export NODE_ENV=production
+          - npm run build
+          - cp netlify.toml build
+          - npm i -g netlify-cli
+          - netlify deploy --dir="./build" --prod --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN --message="CI/CD build"

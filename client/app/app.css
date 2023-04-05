@@ -1,0 +1,250 @@
+:root {
+
+  /* Colors */
+
+  --primary-light: #f2f2f2;
+  --primary-dark: #161616;
+  --primary-accent: #7a48f9;
+  --face-icon-color: orange;
+  --brand-svg-color: #7a48f9;
+
+  --landing-panel-border: var(--primary-accent);
+  --landing-panel-bg: var(--primary-light);
+
+  --app-button-border: #7a48f9;
+  --app-button-bg: #7a48f9;
+  --app-button-color: #ffffff;
+  --app-button-highlight-bg: #6533e6;
+  --app-button-highlight-color: aliceblue;
+
+  --app-input-bg: #ffffff;
+  --app-input-color: #161616;
+  --app-input-highlight-bg: #f1f0ff;
+  --app-input-label-color: #303030;
+  --app-input-label-highlight: #000000;
+
+  --app-keywords-bg: var(--app-input-bg);
+  --app-keywords-highlight-bg: var(--app-input-highlight-bg);
+  --app-keywords-label-color: var(--app-input-label-color);
+  --app-keywords-label-highlight: var(--app-input-label-highlight);
+
+  --app-card-border: #e4e4e4;
+  --app-card-bg: #f0f0f0;
+
+  --scroll-highlight: #7a48f9;
+  --scroll-shadow: #adadad;
+
+  --loading-bg: #a6dfab;
+  --loading-border-left-color: #acd3e2e7;
+  --loading-border-right-color: #c4fd9ee7;
+  --loading-highlight-bg1: #b996fc;
+  --loading-highlight-bg2: #4be453;
+  --loading-shade: #000000a9;
+
+  --robot-svg-color: var(--primary-dark);
+  --arrow-svg-color: var(--primary-dark);
+
+  --no-js-color: var(--primary-light);
+  --no-js-bg: var(--primary-dark);
+  --no-juice-color1: var(--primary-light);
+  --no-juice-color2: var(--primary-accent);
+
+  --logo-editor-bg: #ececec;
+  --logo-editor__preview-border: #e4e4e4;
+
+  --control-wrapper-bg: #ffffff;
+  --control-wrapper-highlight-bg: #f1f0ff;
+  --control-wrapper-label-highlight: #000000;
+  --control-wrapper-label-color: #303030;
+
+  --palette-bg: #ffffff;
+  --palette-highlight-bg: #f1f0ff;
+  --palette-label-color: #303030;
+  --palette-label-highlight: #000000;
+
+  --editor-controls-border: #cacaca;
+
+  --wcag-contrast-pass-color: green;
+  --wcag-contrast-fail-color: red;
+
+  --try-a11y-color: #000000;
+
+  --export-panel-bg: #ffffff;
+  --export-panel-separator: var(--primary-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: linear .3s;
+}
+
+::-moz-selection {
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+::selection {
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.link-style,
+a {
+  color: var(--primary-accent);
+  opacity: .8;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link-style {
+  text-decoration: underline;
+}
+
+.link-style:hover,
+a:focus,
+a:hover {
+  opacity: 1;
+}
+
+a.card {
+  opacity: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+button.link-style {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+header {
+  padding-top: 90px;
+  text-align: center;
+  text-align: center;
+}
+
+header h1 {
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+footer {
+  width: 100vw;
+  height: 30px;
+  text-align: center;
+  font-size: .8em;
+  padding-top: 5vh;
+}
+
+/*
+  Scrollbars
+  @see {https://css-tricks.com/almanac/properties/s/scrollbar/
+*/
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: var(--scroll-shadow);
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-highlight);
+  outline: 1px solid var(--scroll-shadow);
+  border-radius: 10px;
+}
+
+/*
+  Element scrollbar
+  @see {https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color
+*/
+.moz-app-scroll {
+  scrollbar-width: 8px;
+  scrollbar-color: var(--scroll-highlight) var(--scroll-shadow);
+}
+
+/* DON'T PRINT SH!T */
+
+@media print {
+  * {
+    display: none;
+  }
+}
+
+/* Dark mode media query */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --robot-svg-color: #dbdbdb;
+    --arrow-svg-color: #dbdbdb;
+
+    --no-js-color: var(--primary-dark);
+    --no-js-bg: var(--primary-light);
+    --no-juice-color1: var(--primary-dark);
+    --no-juice-color2: var(--primary-accent);
+
+    --logo-editor-bg: #1c1c1c;
+    --logo-editor__preview-border: #000000;
+
+    --control-wrapper-bg: #303030;
+    --control-wrapper-highlight-bg: #3b3b3b;
+    --control-wrapper-label-color: #f2f2f2;
+    --control-wrapper-label-highlight: #ffffff;
+
+    --palette-bg: #303030;
+    --palette-highlight-bg: #3b3b3b;
+    --palette-label-color: #f2f2f2;
+    --palette-label-highlight: #ffffff;
+
+    --editor-controls-border: #414141;
+    --scroll-shadow: #303030;
+
+    --wcag-contrast-pass-color: #7fff7f;
+    --wcag-contrast-fail-color: #ffa1a1;
+
+    --try-a11y-color: #ffffff;
+
+    --app-input-color: #ffffff;
+    --app-input-bg: #303030;
+    --app-input-highlight-bg: #3b3b3b;
+    --app-input-label-color: #ffffff;
+    --app-input-label-highlight: #ffffff;
+
+    --landing-panel-border: #202020;
+    --landing-panel-bg: #202020;
+
+    --export-panel-bg: #303030;
+    --export-panel-separator: #3d3d3d;
+  }
+
+  body {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    transition: none;
+  }
+}

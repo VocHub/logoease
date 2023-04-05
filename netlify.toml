@@ -1,0 +1,12 @@
+[context.production]
+  command = "npm run build"
+
+[build]
+  publish = ""
+  command = ""
+  functions = "lambda"
+
+[[redirects]]
+  from="/*"
+  to="/index.html"
+  status=200

@@ -1,0 +1,71 @@
+{
+  "name": "gabriel.",
+  "version": "0.1.0",
+  "description": "We deliver logos.",
+  "scripts": {
+    "autoprefix": "postcss client/app/**/*.css --use autoprefixer -r --no-map",
+    "lint-styles": "npm run autoprefix; stylelint client/app/**/*.css",
+    "lint": "eslint . --ext=jsx --ext=js",
+    "test": "jest",
+    "watch": "webpack-dev-server --watch --config webpack.client.js",
+    "build": "webpack --config webpack.client.js",
+    "lambda-build": "netlify-lambda build functions",
+    "lambda-serve": "netlify-lambda serve functions"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dom-to-image": "^2.6.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "@digitalkaoz/preload-polyfill": "^1.22.5",
+    "a11ycolor": "^2.0.9",
+    "ac-colors": "^1.4.1",
+    "autoprefixer": "^9.8.5",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "color-name-list": "^6.8.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^3.4.2",
+    "dotenv": "^8.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^25.1.0",
+    "jsdom": "^16.4.0",
+    "jsdom-global": "^3.0.2",
+    "localforage": "^1.8.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "netlify-lambda": "^1.6.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-cli": "^7.1.1",
+    "sinon": "^9.0.2",
+    "style-loader": "^1.1.3",
+    "stylelint": "^13.6.1",
+    "the-noun-project": "^2.1.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akaizn-junior/logomaker.git"
+  },
+  "author": "Simao Nziaka",
+  "bugs": {
+    "url": "https://github.com/akaizn-junior/logomaker/issues"
+  },
+  "homepage": "https://logomaker.netlify.app/#/"
+}
